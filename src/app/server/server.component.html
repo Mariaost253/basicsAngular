@@ -1,2 +1,3 @@
-<p>ergerg  erger g</p>
-<p [ngStyle]="{'color': getColor()}">{{'Server'}}fff {{serverID}} and {{getServerStatus()}}</p>
+<p>Im server component</p>
+<p [ngStyle]="{'color': getColor()}"
+[ngClass]="{online: serverStatus === 'online'}">{{'Server'}} with ID num.{{serverID}} is {{getServerStatus()}}</p>

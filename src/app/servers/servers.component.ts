@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   //selector: '[app-servers]',
  // selector:'.app-servers',
@@ -23,6 +24,8 @@ export class ServersComponent implements OnInit {
   serverCreatedStatus : string = "No server created";
   serverName: string ='';
   serverCreated: boolean = false;
+  servers: string[] = [''];
+  serversNum: number [] = [];
 
   constructor() { 
   setTimeout((/*args*/)=>{/*func body*/
@@ -35,7 +38,10 @@ export class ServersComponent implements OnInit {
 
   onCreateServer(){
     this.serverCreated= true;
-    this.serverCreatedStatus="Was created " + this.serverName ;
+    this.servers.push(this.serverName);
+    this.serversNum.push(this.servers.length+1);
+    console.log(this.servers[0]);
+    this.serverCreatedStatus= this.serversNum.length + ".Was created " + this.servers[this.serversNum.length]  ;
   }
   
   onUpdateServerName(event : Event){
